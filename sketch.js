@@ -21,13 +21,7 @@ var backgroundImage;
 var stones = [];
 
 function preload() {
-  zombie1 = loadImage("./assets/zombie1.png");
-  zombie2 = loadImage("./assets/zombie2.png");
-
-  zombie3 = loadImage("./assets/zombie3.png");
-  zombie4 = loadImage("./assets/zombie4.png");
-
-  backgroundImage = loadImage("./assets/background.png");
+ 
 }
 
 function setup() {
@@ -52,17 +46,9 @@ function setup() {
     var stone = new Stone(x, y, 80, 80);
     stones.push(stone);
   }
-
-  zombie = createSprite(width / 2, height - 110);
-  zombie.addAnimation("lefttoright", zombie1, zombie2, zombie1);
-  zombie.addAnimation("righttoleft", zombie3, zombie4, zombie3);
-  zombie.scale = 0.1;
-  zombie.velocityX = 10;
-
-  breakButton = createButton("");
-  breakButton.position(width - 200, height / 2 - 50);
-  breakButton.class("breakbutton");
-  breakButton.mousePressed(handleButtonPress);
+//create zombie and breakbutton
+  
+  
 }
 
 function draw() {
@@ -89,8 +75,5 @@ function draw() {
 }
 
 function handleButtonPress() {
-  jointLink.dettach();
-  setTimeout(() => {
-    bridge.break();
-  }, 1500);
+  //hint 3
 }
